@@ -14,7 +14,7 @@ userRouter
     })
     .get('/:id', (c) => {
         const { id } = c.req.param();
-        const user = fakeUsers[Number.parseInt(id)];
+        const user = fakeUsers[Number.parseInt(id) - 1];
 
         if (!user) {
             return c.notFound();
