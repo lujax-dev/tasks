@@ -7,7 +7,7 @@ healthRouter.get('/', (c) => {
         status: 'ok',
         service: 'api',
         runtime: 'bun',
-        uptimeSeconds: process.uptime(),
+        uptimeSeconds: Math.floor(process.uptime()),
         timestamp: new Date().toISOString()
     }, 200)
 })
