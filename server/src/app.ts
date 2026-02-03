@@ -3,6 +3,7 @@ import { logger } from 'hono/logger'
 import { cors } from 'hono/cors';
 import { userRouter } from './routes/users';
 import { tasksRouter } from './routes/tasks';
+import { healthRouter } from './routes/health';
 
 const app = new Hono()
 
@@ -14,6 +15,7 @@ app.use(logger());
 
 // Routes
 app.route('/api/users', userRouter);
-app.route('/api/tasks', tasksRouter)
+app.route('/api/tasks', tasksRouter);
+app.route('/api/health', healthRouter);
 
 export default app
